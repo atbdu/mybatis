@@ -9,4 +9,10 @@
     <update id="updateDay" parameterType="pojo.Day">
         update day set day=#{day} where code=#{code}
     </update>
+    <insert id="insertDay" parameterType="pojo.Day">
+        insert into day(`day`, code) values (#{day},#{code})
+    </insert>
+    <delete id="deleteDay" parameterType="int">
+        delete from day where code =#{code}
+    </delete>
 </mapper>
