@@ -15,4 +15,10 @@
     <delete id="deleteDay" parameterType="int">
         delete from day where code =#{code}
     </delete>
+    <update id="updateDay2" parameterType="map">
+        update day set day=#{day_day} where code=#{day_code}
+    </update>
+    <select id="getDayByDay" parameterType="int" resultType="pojo.Day">
+        select * from day where code like concat('%',#{code},'%')
+    </select>
 </mapper>

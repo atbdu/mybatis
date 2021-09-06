@@ -9,7 +9,9 @@ import utils.MybatisUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -34,7 +36,18 @@ public class Test {
 //        int m = mapper.insertDay(day2);
 //        System.out.println(m);
         //删除
-        mapper.deleteDay(3);
+//        mapper.deleteDay(3);
+        //map传多个参数
+//        Map<String,String> map = new HashMap<String, String>();
+//        map.put("day_day","2021-05-20");
+//        map.put("day_code","1");
+//        int i = mapper.updateDay2(map);
+//        System.out.println(i);
+        //模糊查询
+        List<Day> days = mapper.getDayByDay(1);
+        for (Day day:days) {
+            System.out.println(day);
+        }
         //提交
         sqlSession.commit();
         //关闭资源
